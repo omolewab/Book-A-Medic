@@ -1,5 +1,5 @@
 # Book-A-Medic
-Book-A-Medic is a Medical Appointment Booking Web Application created by BVIA Creatives for their Winter 2022 Capstone Project. 
+<b>Book-A-Medic</b> is a Medical Appointment Booking Web Application created by BVIA Creatives for their Winter 2022 Capstone Project. 
 <br> <b>BVIA Creatives includes:</b>
 <ul>
   <li> Blessing Omobo </li>
