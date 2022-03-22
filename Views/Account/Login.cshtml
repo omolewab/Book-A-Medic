@@ -1,0 +1,40 @@
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <script src="~/js/Account.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <title>Login </title>
+    <link rel="stylesheet" href="~/css/login.css" type="text/css" />
+</head>
+<body id="bodyLogin">
+    <main>
+        <div id="divLoginBox">
+            <h1 class="headerlogin">Login to your account</h1>
+            <div>
+                <label id="lblUsername" for="txtUserName">Username:</label><span>*</span><br />
+                <input type="text" class="inputs" id="txtUserName" value="" placeholder="Enter username" />
+            </div>
+            <div>
+                <label id="lblPassword" for="txtPassword">Password:</label><span>*</span><br />
+                <input type="text" class="inputs" id="txtPassword" value="" placeholder="Enter password" />
+            </div>
+            <div>
+                <input type="button" id="btnSubmit" onclick="Login()" value="Login" />
+            </div>
+
+        </div>
+        <div>
+            <p>dont have an acccount? <a href="~/Account/Registration">Register now</a></p>
+        </div>
+    </main>
+</body>
+</html>
+
