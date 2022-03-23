@@ -9,10 +9,11 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="~/js/Account.js"></script>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <title>Signup.Book A Medic </title>
     <link rel="stylesheet" type="text/css" href="~/css/registration.css" />
+
 </head>
 
 <body id="bodyRegistration">
@@ -22,7 +23,7 @@
         <div id="divRegistrationBox">
 
             <h1 class="reg">Register for an account</h1>
-            <form>
+            <div>
 
                 <div>
                     <label id="lblfname" for="firstName">Firstname: </label><span>*</span>
@@ -97,9 +98,9 @@
 
 
                 <div>
-                    <input type="submit" id="Submit" onClick="Registration()" value="Register" />
+                    <input type="button" id="btnSubmit" onclick="Registration()" value="Register" />
                 </div>
-            </form>
+            </div>
 
         </div>
 

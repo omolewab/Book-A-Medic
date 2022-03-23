@@ -1,27 +1,29 @@
 function Login() {
-    var username = $("#txtUserName").val();
-    var password = $("#txtPassword").val();
-    if (username != "" && password != "") {
-        $.ajax({
-            url: "/Account/UserLogin",
-            type: 'GET',
-            contentType: 'application/json',
-            data: { userName: username, password: password },
-            success: function (response) {
-                if (response == "success") {
-                    alert("Login is successfull.");
+	var username = $("#txtUserName").val();
+	var password = $("#txtPassword").val();
+	if (username != "" && password != "") {
+		$.ajax({
+			url: "/Account/UserLogin",
+			type: 'GET',
+			contentType: 'application/json',
+			data: { userName: username, password: password },
+			success: function (response) {
+				if (response == "success") {
+					alert("Login is successfull.");
 					window.location = "/Home/Index";
-                }
-                else {
-                    alert("Wrong credentials. Try again");
-                }
-            }
-        });
-        return false;
-    }
-    else {
-        alert("Please enter username and password");
-    }
+				}
+				else {
+					alert("Wrong credentials. Try again");
+				}
+			}
+		});
+		return false;
+	}
+	else {
+		alert("Please enter username and password");
+	}
+
+
 
 }
 
@@ -216,11 +218,13 @@ function Registration() {
 		if (isValid == true) {
 			var data = {
 				"FirstName": fname, "LastName": lname, "Address1": address1, "Address2": address2, "City": city, "Zip": zip, "Contact": contact,
-				"Email": email, "Password": pass, "Usertype": usertype };
+				"Email": email, "Password": pass, "Usertype": usertype
+			};
 			$.ajax({
 				url: "/Account/UserRegistration",
 				type: 'POST',
 				contentType: 'application/json',
+				async: true,
 				data: JSON.stringify(data),
 				success: function (response) {
 					if (response == "success") {
@@ -241,4 +245,3 @@ function Registration() {
 
 
 
-        
