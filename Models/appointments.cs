@@ -11,6 +11,8 @@ namespace BookAMedic.Models
 
     public class appointments
     {
+        internal readonly object status;
+
         [Key]
         [Required]
         [Column("appointments_id")]
@@ -37,7 +39,7 @@ namespace BookAMedic.Models
         [Required]
         [Column("time")]
 
-        public DateTime Time { get; set; }
+        public TimeSpan Time { get; set; }
 
         [Required]
         [Column("status")]

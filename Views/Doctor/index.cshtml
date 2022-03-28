@@ -1,118 +1,45 @@
-
-@{
-    Layout = null;
-}
+﻿@using CapstoneBvia.Models;
+@model IEnumerable<CapstoneBvia.ViewModels.seeappointmentdoctorswithpatients>;
 
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <script src="~/js/Account.js"></script>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <title>Signup.Book A Medic </title>
-    <link rel="stylesheet" type="text/css" href="~/css/registration.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Profile</title>
+    @* for jquery calender interface*@
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">  
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>  
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+   
 </head>
+<body>
 
-<body id="bodyRegistration">
+  
 
-
-    <main>
-        <div id="divRegistrationBox">
-            <div>
-
-            </div>
-
-            <h1 class="reg">Register for an account</h1>
-            <form>
-
-                <div>
-                    <label id="lblfname" for="firstName">Firstname: </label><span>*</span>
-                    <input type="text" class="inputs" name="firstName" id="fname" value="" placeholder="Enter firstname" />
-                </div>
-                <div>
-                    <label id="lbllname" for="lastName">Lastname </label><span>*</span>
-                    <input type="text" class="inputs" name="lastName" id="lname" value="" placeholder="Enter lastname" />
-                </div>
-                <div>
-                    <label id="lbladdressline1" for="address1">Address line 1: </label><span>*</span>
-                    <input type="text" class="inputs" name="address1" id="address1" value="" placeholder="Enter address" />
-                </div>
-                <div>
-                    <label id="lbladdressline2" for="address2">Address line 2: </label>
-                    <input type="text" class="inputs" name="address2" id="address2" value="" placeholder="optional" />
-                </div>
-
-                <div>
-                    <label id="lblprovince" for="province">select province:<br /></label>
-                    <select name="province" id="province">
-                        <option value="ON" default>Ontario</option>
-                        <option value="QC">Quebec</option>
-                        <option value="NS">Nova Scotia</option>
-                        <option value="NB">New Brunswick</option>
-                        <option value="MB">Manitoba</option>
-                        <option value="BC">British Columbia</option>
-                        <option value="PE">PE Island</option>
-                        <option value="SK">Saskatchewan</option>
-                        <option value="AB">Alberta</option>
-                        <option value="NL">Newfoundland</option>
-                    </select>
-                </div>
-                <div>
-                    <label id="lblcity" for="city"> City:</label>
-                    <span>*</span><br />
-                    <input type="text" class="inputs" id="city" name="city" placeholder="enter your city name" />
-                </div>
-                <div>
-                    <label id="lblzip" for="zip">zip-code:</label>
-                    <span>*</span><br />
-                    <input type="text" class="inputs" id="zip" name="zip" placeholder="enter your zip code" />
-                </div>
-                <div>
-                    <label id="lblcontact" for="contact">Contact:</label>
-                    <span>*</span><br />
-                    <input type="text" class="inputs" id="contact" name="contact" placeholder="enter contact number" />
-                </div>
-                <div>
-                    <label id="lblemail" for="email">Email:</label>
-                    <span>*</span><br />
-                    <input type="text" class="inputs" id="email" name="email" placeholder="enter your email ID" />
-                </div>
-                <div>
-                    <label id="lblpass" for="pass">Password:</label>
-                    <span>*</span><br />
-                    <input type="text" class="inputs" id="pass" name="pass" placeholder="enter password" />
-                </div>
-                <div>
-                    <label id="lblcpass" for="confirmpass">confirm Password:</label>
-                    <span>*</span><br />
-                    <input type="text" class="inputs" id="confirmpass" name="confirmpass" placeholder="confirm your password" />
-                </div>
-                <div>
-                    <label>Please select registration category:</label><span id="displaycategory">*</span><br />
-                    <input type="radio" checked="checked" id="p_registration" name="registrationtype" value="patient">
-                    <label>register as patient</label><br>
-
-                    <input type="radio" id="d_registration" name="registrationtype" value="doctor">
-                    <label>register as doctor</label><br>
-                </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Patient Name:</th>
+                    <th>Appointment Date:</th>
+                    <th>Appointment time:</th>
+                </tr>
+              
+            </thead>
+            <tbody>
+                @foreach(var app in Model){
+                <tr>          
+                    <td>@app.patname</td>
+                    <td>@app.appdate.ToString("dd MMM yyyy")</td>
+                    <td>@app.apptime</td>
+                    
+                </tr>}
+            </tbody>
+           
+        </table>
 
 
-                <div>
-                    <input type="submit" id="Submit" onClick="Registration()" value="Register" />
-                </div>
-            </form>
-
-        </div>
-
-
-
-        <div>
-            <p>existing user? <a href="~/Account/Login">login now</a></p>
-        </div>
-
-
-    </main>
 </body>
-</html>
+</html>    
